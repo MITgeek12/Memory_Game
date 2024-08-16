@@ -26,9 +26,15 @@ public class Card {
         this.animalImgDown = animalImgDown;
         
         // image face up
-        //String filename = "resources/" + animal + ".png";
         String filename = animal + ".png";
-        //animalImgUp = new Image(display, filename);
+        /* 
+        Finds the resource with the given name. 
+        A resource is some data (images, audio, text, etc) that can be accessed by class code in a way that is independent of the location of the code.
+        The name of a resource is a '/'-separated path name that identifies the resource.
+		This method will first search the parent class loader for the resource. 
+		If the parent is null the path of the class loader built-in to the virtual machine is searched. 
+        That failing, this method will invoke findResource(String) to find the resource.
+        */
         animalImgUp = new Image(display, Card.class.getResourceAsStream(filename));
     }
     

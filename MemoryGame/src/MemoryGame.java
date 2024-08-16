@@ -259,7 +259,7 @@ public class MemoryGame {
 		// initializing cards ArrayList
 		int cardNum = 1; // card number
 		for (int i = 0; i < 12; i++) {
-			Image imgDown = new Image(display, "resources/Card_FaceDown.png"); // relative path
+			Image imgDown = new Image(display, MemoryGame.class.getResourceAsStream("Card_FaceDown.png"));
 			//System.out.println("face down image retrieved");
 			Image scaledImgDown = new Image(display, imgDown.getImageData().scaledTo(150, 150));
 			int animalIndex = (int) (Math.random() * animals.size()); // get random animal
