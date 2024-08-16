@@ -4,6 +4,7 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.widgets.Display;
 
+
 public class Card {
     private int x, y, width, height;
     private boolean faceUp; // false with filled box, true with unfilled box including animal
@@ -25,8 +26,10 @@ public class Card {
         this.animalImgDown = animalImgDown;
         
         // image face up
-        String filename = "resources/" + animal + ".png";
-        animalImgUp = new Image(display, filename);
+        //String filename = "resources/" + animal + ".png";
+        String filename = animal + ".png";
+        //animalImgUp = new Image(display, filename);
+        animalImgUp = new Image(display, Card.class.getResourceAsStream(filename));
     }
     
     /*
